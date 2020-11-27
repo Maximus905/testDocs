@@ -7,7 +7,7 @@ To start using TH2 you have to configure the Kubernetes cluster. You can find th
 
 After installing all the core components in the cluster Kubernetes, you can use the th2 demo configuration of the th2 environment.  
 
-To set up custom parameters of th2 follow the steps:
+### To set up custom parameters of th2 follow the steps:
 
 1. Copy the content of [repository](https://github.com/th2-net/th2-infra-demo-configuration) to your git repository. For gitlab you can use the ‘Import project’ option to create a new repository.
 2. Connect your new repository to `infra-mgr`. Please find the hints <here>.
@@ -34,18 +34,19 @@ We also have a dictionary with the FIX protocol version, which is used by our co
 
 Now, let’s review our test scenario. Trader1 sends to the system two Buy Orders with different prices and quantities. After that, Trader2 will send an IOC Sell Order to the system with the price lower than both of the Trader1 Orders’ prices. We are going to check all the response messages, sent from the system, and the results of the trade. This scenario will be performed in several variations with different parameters.
 
-1. User1 submit buy order with Price=x and Size=30 - Order1
+### Test Scenario:
+1. User1 submit buy order with Price=x and Size=30 - **Order1**
 * User1 receives an Execution Report with ExecType=0
-2. User1 submit buy order with Price=x+1 and Size=10 - Order2
+2. User1 submit buy order with Price=x+1 and Size=10 - **Order2**
 * User1 receives an Execution Report with ExecType=0
-3. User2 submit sell IOC order with price=x-1 and Size=100 - Order3
-* User1 receives an Execution Report with ExecType=F on trade between Order2 and Order3
-* User2 receives an Execution Report with ExecType=F on trade between Order3 and Order2
-* User1 receives an Execution Report with ExecType=F on trade between Order1 and Order3
-* User2 receives an Execution Report with ExecType=F on trade between Order3 and Order1
-* User2 receives an Execution Report with ExecType=C on expired Order3
+3. User2 submit sell IOC order with price=x-1 and Size=100 - **Order3**
+* User1 receives an Execution Report with ExecType=F on trade between **Order2** and **Order3**
+* User2 receives an Execution Report with ExecType=F on trade between **Order3** and **Order2**
+* User1 receives an Execution Report with ExecType=F on trade between **Order1** and **Order3**
+* User2 receives an Execution Report with ExecType=F on trade between **Order3** and **Order1**
+* User2 receives an Execution Report with ExecType=C on expired **Order3**
 
-To set up the script:
+### To set up the script:
 1. Copy to your repository content from the [link](https://github.com/th2-net/th2-demo-script)
 2. Get python environment 3.7+ (e.g. conda).
 > Recommended: get IDE to work with python (e.g. pycharm, spyder). You can also start this script from the command line, but IDE will make this process more convenient.
