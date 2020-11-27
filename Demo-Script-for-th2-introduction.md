@@ -34,6 +34,17 @@ We also have a dictionary with the FIX protocol version, which is used by our co
 
 Now, let’s review our test scenario. Trader1 sends to the system two Buy Orders with different prices and quantities. After that, Trader2 will send an IOC Sell Order to the system with the price lower than both of the Trader1 Orders’ prices. We are going to check all the response messages, sent from the system, and the results of the trade. This scenario will be performed in several variations with different parameters.
 
+1. User1 submit buy order with Price=x and Size=30 - Order1
+* User1 receives an Execution Report with ExecType=0
+2. User1 submit buy order with Price=x+1 and Size=10 - Order2
+* User1 receives an Execution Report with ExecType=0
+3. User2 submit sell IOC order with price=x-1 and Size=100 - Order3
+* User1 receives an Execution Report with ExecType=F on trade between Order2 and Order3
+* User2 receives an Execution Report with ExecType=F on trade between Order3 and Order2
+* User1 receives an Execution Report with ExecType=F on trade between Order1 and Order3
+* User2 receives an Execution Report with ExecType=F on trade between Order3 and Order1
+* User2 receives an Execution Report with ExecType=C on expired Order3
+
 To set up the script:
 1. Copy to your repository content from the [link](https://github.com/th2-net/th2-demo-script)
 2. Get python environment 3.7+ (e.g. conda).
