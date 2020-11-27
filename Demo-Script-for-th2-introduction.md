@@ -14,7 +14,7 @@ After installing all the core components in the cluster Kubernetes, you can use 
 3. To set up read-log follow next steps:
 * Create the directory for storage `read-log` files;
 * Specify the path to the directory in `config.yaml` file;
-* Place the files from the [directory](https://github.com/th2-net/th2-read-log/tree/master/examples) to your directory.
+* Place the files from the [th2-read-log](https://github.com/th2-net/th2-read-log/tree/master/examples) to your directory.
 4. Specify the parameter `k8s-propagation` in `infra-mgr-config.yml` file. Specify it as ‘rule’ or ‘sync’ for the `infra-mgr` to start the installation. Please note that namespace’s name with this configuration in Kubernetes will have the same name as the branch name and have the prefix `schema_`. 
 > Note that `infra-mgr-config.yml` file content a list of possible parameters for `k8s-propagation` and parameter description.
 
