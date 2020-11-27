@@ -28,7 +28,7 @@ Let’s consider the components which we have in the demo configuration.
 4. A set of components that simulates another system (the provided set of messages is limited within the current demo script): `fix-demo-server1`, `fix-demo-server2`, `dc-demo-server1`, `dc-demo-server2`, `sim-demo`.
 
 We also have a dictionary with the FIX protocol version, which is used by our components `conn` and `codec`. The `codec` will be used to encode/decode messages while the dictionary contains the description of version specific protocol messages. The `conn` component is used to communicate with the target system. A description with the connections between these components is represented in the diagram below:
-![](https://drive.google.com/drive/folders/1xLqiRHizz5LQEUPA0_ZmmgkKwomimusq)
+![](https://raw.githubusercontent.com/th2-net/th2-infra-demo-configuration/master/schema.png)
 
 ## 4. RUNNING THE SCRIPT
 
