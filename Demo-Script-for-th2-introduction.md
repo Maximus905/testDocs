@@ -18,7 +18,7 @@ After installing all the core components in the cluster Kubernetes, you can use 
 4. Specify the parameter `k8s-propagation` in `infra-mgr-config.yml` file. Specify it as ‘rule’ or ‘sync’ for the `infra-mgr` to start the installation. Please note that namespace’s name with this configuration in Kubernetes will have the same name as the branch name and have the prefix `schema_`. 
 > Note that `infra-mgr-config.yml` file content a list of possible parameters for `k8s-propagation` and parameter description.
 
-As the result of these steps `infra-mgr` will create a new namespace in your Kubernetes and rise up all components from current configuration. The related namespace with all the necessary settings will be set up automatically with `infra-mng` after you’ll copy the config to your branch. In this configuration, you’ll be able to study how to work with th2 and also how to run the demo script. 
+As the result of these steps `infra-mgr` will create a new namespace in your Kubernetes and rise up all components from current configuration. The related namespace with all the necessary settings will be set up automatically with `infra-mng` after you’ll copy the config to your branch. In this configuration, you’ll be able to study how to work with th2 and how to run the demo script. 
 
 ## 3. THEORY OF TH2
 Let’s consider the components which we have in the demo configuration. 
