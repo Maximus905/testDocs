@@ -1,0 +1,1 @@
+![](https://github.com/th2-net/th2-documentation/blob/master/th2_logo_3.png)
