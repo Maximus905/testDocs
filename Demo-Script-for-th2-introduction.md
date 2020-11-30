@@ -92,10 +92,10 @@ Now let’s look at the 6th Case. As you can see it’s red, meaning that scenar
 The Message tab is the list of outcoming and incoming messages. It is linked with Events. When you choose an event with a message, this message is displayed on the list in the Message tab. Also you can navigate through the message list without reference to any event for extra analysis. 
 
 Events and messages are stored in estore and mstore without time limits, so you can return to your test scenarios anytime. 
-The last point of our example is the recon scenario. For recon we use several rules, which compares the data from different sources. We compare ExecutionReports from DEMO-CONN1 and DEMO-CONN2 with the original reports, `ExecutionReports` from FIX conn with Reports from DropCopy conn. Also we check messages in read-log and instruments in refData.
 
 ### Recon
 
+The last point of our example is the recon scenario. For recon we use several rules, which compares the data from different sources. We compare ExecutionReports from DEMO-CONN1 and DEMO-CONN2 with the original reports, `ExecutionReports` from FIX conn with Reports from DropCopy conn. Also we check messages in read-log and instruments in refData.
 In our demo example we configured recon with two rules: `rule_1` and `rule_2`.
 
 `Rule_1` (displayed as `"demo-conn1 vs demo-conn2"` in GUI) shows the trades between DEMO-CONN1 and DEMO-CONN2 traders. We expect to see one `ExecutionReport` from both DEMO-CONN1 and DEMO-CONN2 traders with the certain session_alias. Then if the field values of key field `TrdMatchID` will be matched, the reconciliation will occur.
