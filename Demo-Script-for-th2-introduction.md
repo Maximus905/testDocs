@@ -89,7 +89,9 @@ For our example, you can see all executed steps. First of all we request securit
 
 Now let’s look at the 6th Case. As you can see it’s red, meaning that scenario failed in this case. It happened because we try to send orders on INSTR6, which doesn’t exist in the sim system. This example shows how th2 works with unexpected behavior of systems. It informs us that we find the bug.
 
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/demo1_gui1.gif)
 
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/demo1_gui2.gif)
 
 The Message tab is the list of outcoming and incoming messages. It is linked with Events. When you choose an event with a message, this message is displayed on the list in the Message tab. Also you can navigate through the message list without reference to any event for extra analysis. 
 
@@ -97,9 +99,12 @@ Events and messages are stored in estore and mstore without time limits, so you 
 
 ### Recon
 
-The last point of our example is the recon scenario. For recon we use several rules, which compares the data from different sources. We compare ExecutionReports from DEMO-CONN1 and DEMO-CONN2 with the original reports, `ExecutionReports` from FIX conn with Reports from DropCopy conn. Also we check messages in read-log and instruments in refData.
+The last point of our example is the recon scenario. For recon we use several rules, which compares the data from different sources. 
+
 In our demo example we configured recon with two rules: `rule_1` and `rule_2`.
 
 `Rule_1` (displayed as `"demo-conn1 vs demo-conn2"` in GUI) shows the trades between DEMO-CONN1 and DEMO-CONN2 traders. We expect to see one `ExecutionReport` from both DEMO-CONN1 and DEMO-CONN2 traders with the certain session_alias. Then if the field values of key field `TrdMatchID` will be matched, the reconciliation will occur.
 
 `Rule_2` (displayed as `"FIX vs DC"` in GUI) compares `ExecutionReports` from  FIX conn and DC conn. The messages are matched by `ClOrdID`, `ExecType` and `ExecID` fields. As the script result will see two `ExecutionReports` for both `Order1` and `Order2` and three `ExecutionReports` for `Order3`. 
+
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/demo1_gui3.gif)
