@@ -89,6 +89,8 @@ For our example, you can see all executed steps. First of all we request securit
 
 Now let’s look at the 6th Case. As you can see it’s red, meaning that scenario failed in this case. It happened because we try to send orders on INSTR6, which doesn’t exist in the sim system. This example shows how th2 works with unexpected behavior of systems. It informs us that we find the bug.
 
+
+
 The Message tab is the list of outcoming and incoming messages. It is linked with Events. When you choose an event with a message, this message is displayed on the list in the Message tab. Also you can navigate through the message list without reference to any event for extra analysis. 
 
 Events and messages are stored in estore and mstore without time limits, so you can return to your test scenarios anytime. 
