@@ -3,7 +3,7 @@ This is the example of how to use th2 test toolkit. In this example you will stu
 We’ll look at the example which will show how th2 modules cooperate with each other to perform test scenarios. We’ll see how the th2 script will generate and send the messages, get the response from the system, store and check test data.
 
 ## 2. INSTALLATION AND SETTING TH2
-To start using TH2 you have to configure the Kubernetes cluster. You can find the hints on how to set up your Kubernetes <here>. 
+To start using TH2 you have to configure the Kubernetes cluster. You can find the [hints](https://github.com/th2-net/th2-documentation/wiki/Centos-7-kubernetes-and-cassandra-installation-guide) on how to set up your Kubernetes <here>. 
 
 After installing all the core components in the cluster Kubernetes, you can use the th2 demo configuration of the th2 environment.  
 
