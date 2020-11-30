@@ -76,7 +76,7 @@ Also component `recon` performs the passive verification during all the env work
 
 ## 5. ANALYSIS OF RESULTS
 
-TH2 has a web-based GUI, which helps to manage and analyze test data. The GUI is divided into two parts: Events and Messages.
+Th2 has a web-based GUI, which helps to manage and analyze test data. The GUI is divided into two parts: Events and Messages.
 
 On the Event tab you can see the list of executed scripts. Each script has a tree of actions which is called events. Events may contain different data: information about sending messages, incoming messages, comparison tables, where you can check that expected and actual results match or don’t match. 
 
