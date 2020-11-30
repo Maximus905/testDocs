@@ -101,7 +101,7 @@ The Message tab is the list of outcoming and incoming messages. It is linked wit
 Events and messages are stored in estore and mstore without time limits, so you can return to your test scenarios anytime. 
 
 ### th2-read-log
-We configured `th2-read-log` to read log file with market data. The results of it's work will be the market data messages in the format they come from the system. Then we compare market data messages with messages sent into `demo-conn1` and `demo-conn2`. As a result, we expect that all NewOrderSingle messages sent via the script will find a pair in the log file.
+We configured `th2-read-log` to read log file with market data. The results of it's work will be the market data messages in the format they come from the system. Then we compare market data messages with messages, sent into `demo-conn1` and `demo-conn2`. As a result, we expect that all `NewOrderSingle` messages, sent via the script, will find a pair in the log file.
 
 ### Recon
 The last point of our example is the recon scenario. For recon we use several rules, which compares the data from different sources. 
