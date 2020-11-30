@@ -35,6 +35,9 @@ In addition we have a dictionary with the FIX protocol version, which is used by
 Recon allows to compare message flows with each other using certain scenarios called rules.
 
 Let's look at he life cycle of messages coming in recon. When message comes to the rule, method `group` is called. This method calculate in which group the message should be placed. Then with `hash` method the message's hash is calculated. The system looks for the messages with the same hash in other groups. If there are messages with particular hash in each group, method check is called for these messages fro more detailed reconciliation. The result is displayed in GUI. 
+
+### th2-read-log
+It's the component which line by line reads a text log file and applies to each line `regex` expression. The results are sent to `RabbitMQ` in raw format. You can connect `th2-read-log` with the `codec` component to transform raw messages into readable format. 
  
 ## 4. RUNNING THE SCRIPT
 
@@ -97,13 +100,15 @@ The Message tab is the list of outcoming and incoming messages. It is linked wit
 
 Events and messages are stored in estore and mstore without time limits, so you can return to your test scenarios anytime. 
 
-### Recon
+### th2-read-log
+We configured `th2-read-log` to read log file with market data. The results of it's work will be the market data messages in the format they come from the system.
 
-The last point of our example is the recon scenario. For recon we use several rules, which compares the data from different sources. 
+### Recon
+The last point of our example is the recon scenario. For recon we use several rules, which compares the data from different sources. Then we compare market data messages with messages sent into `demo-conn1` and `demo-conn2`. As a result, we expect that all NewOrderSingle messages sent via the script will find a pair in the log file.
 
 In our demo example we configured recon with two rules: `rule_1` and `rule_2`.
 
-`Rule_1` (displayed as `"demo-conn1 vs demo-conn2"` in GUI) shows the trades between DEMO-CONN1 and DEMO-CONN2 traders. We expect to see one `ExecutionReport` from both DEMO-CONN1 and DEMO-CONN2 traders with the certain session_alias. Then if the field values of key field `TrdMatchID` will be matched, the reconciliation will occur.
+`Rule_1` (displayed as `"demo-conn1 vs demo-conn2"` in GUI) shows the trades between DEMO-CONN1 and DEMO-CONN2 traders. We expect to see one `ExecutionReport` from both `demo-conn1` and `demo-conn2` traders with the certain session_alias. Then if the field values of key field `TrdMatchID` will be matched, the reconciliation will occur.
 
 `Rule_2` (displayed as `"FIX vs DC"` in GUI) compares `ExecutionReports` from  FIX conn and DC conn. The messages are matched by `ClOrdID`, `ExecType` and `ExecID` fields. As the script result will see two `ExecutionReports` for both `Order1` and `Order2` and three `ExecutionReports` for `Order3`. 
 
