@@ -14,4 +14,6 @@ th2 is a Kubernetes-driven microservices solution. It operates by leveraging a t
 
 # **what is th2 for?**
 
-Users of th2, such as software development engineers in test (SDET) professionals whocan work equally and effectively as programmers, testers and data analysts - , will be able to execute sophisticated test algorithms, collect and process distributed test data (e.g. for MLmachine learning purposes), perform model-based testing, and analyse the behaviour of thesystems under test. th2 microservices design allows implementing a large variety of automated testing techniques and efficiently combining them to deal with very complex test cases and scenarios.
+Users of th2, such as software development engineers in test (SDET) professionals whocan work equally and effectively as programmers, testers and data analysts - , will be able to execute sophisticated test algorithms, collect and process distributed test data (e.g. for machine learning purposes), perform model-based testing, and analyse the behaviour of the systems under test. 
+
+th2 microservices design allows implementing a large variety of automated testing techniques and efficiently combining them to deal with very complex test cases and scenarios.
