@@ -16,6 +16,7 @@ After installing all the core components in the cluster Kubernetes, you can use 
 * Specify the path to the directory in `config.yaml` file;
 * Place the files from the [th2-read-log/example](https://github.com/th2-net/th2-read-log/tree/master/examples) to your directory.
 4. Specify the parameter `k8s-propagation` in `infra-mgr-config.yml` file. Specify it as ‘rule’ or ‘sync’ for the `infra-mgr` to start the installation. Please note that namespace’s name with this configuration in Kubernetes will have the same name as the branch name and have the prefix `schema_`. 
+5. To set up all the necessary dependencies, you need to install the packages from requirements.txt. This can be done with `pip install -r requirements.txt`.
 > Note that `infra-mgr-config.yml` file content a list of possible parameters for `k8s-propagation` and parameter description.
 
 As the result of these steps `infra-mgr` will create a new namespace in your Kubernetes and rise up all components from current configuration. The related namespace with all the necessary settings will be set up automatically with `infra-mng` after you’ll copy the config to your branch. In this configuration, you’ll be able to study how to work with th2 and how to run the demo script. 
