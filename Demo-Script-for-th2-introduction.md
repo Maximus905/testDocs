@@ -22,7 +22,7 @@ As the result of these steps `infra-mgr` will create a new namespace in your Kub
 
 ## 3. THEORY OF TH2
 Let’s consider the components which we have in the demo configuration. 
-1. We have a set of components which are responsible for the storage of information in in the data lake and to display them into the GUI: `estore`, `mstore`, `rpt-data-provider`, `rpt-data-viewer`.
+1. We have a set of components which are responsible for the storage of information in the data lake and to display them into the GUI: `estore`, `mstore`, `rpt-data-provider`, `rpt-data-viewer`.
 2. A set of components which are responsible for creating outcoming messages and for checking messages: `act`, `check1`, `recon`, `util`.
 3. We also have a set of components which receives messages from a remote system or other sources and convert them into a format that is understandable to the users and to other th2 components: `demo-conn1`, `demo-conn2`, `demo-dc1`, `demo-dc2`, `codec`, `read-log`.
 4. A set of components that simulates another system (the provided set of messages is limited within the current demo script): `fix-demo-server1`, `fix-demo-server2`, `dc-demo-server1`, `dc-demo-server2`, `sim-demo`.
