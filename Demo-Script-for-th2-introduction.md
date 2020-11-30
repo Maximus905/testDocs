@@ -19,7 +19,7 @@ After installing all the core components in the cluster Kubernetes, you can use 
 5. To set up all the necessary dependencies, you need to install the packages from requirements.txt. This can be done with `pip install -r requirements.txt`.
 > Note that `infra-mgr-config.yml` file content a list of possible parameters for `k8s-propagation` and parameter description.
 
-As the result of these steps `infra-mgr` will create a new namespace in your Kubernetes and rise up all components from current configuration. The related namespace with all the necessary settings will be set up automatically with `infra-mng` after you’ll copy the config to your branch. In this configuration, you’ll be able to study how to work with th2 and how to run the demo script. 
+As the result of these steps `infra-mgr` will create a new namespace in your Kubernetes and rise up all components from current configuration. The related namespace with all the necessary settings will be set up automatically with `infra-mng` after you’ll copy the config to your branch.
 
 ## 3. THEORY OF TH2
 Let’s consider the components which we have in the demo configuration. 
