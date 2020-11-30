@@ -1,14 +1,17 @@
-Welcome to the th2-documentation wiki!
+Welcome to the **th2** wiki!
 
+## **th2 - NEXT GENERATION SOFTWARE TESTING FRAMEWORK**
 
-**what is th2?**
+![](https://github.com/th2-net/th2-documentation/blob/master/th2_logo_2.png)
 
-The th2 toolkit is designed to enable efficient machine learning (ML)- driven testing forcomplex distributed transaction processing systems, such as securities trading systems andexchanges, banking, brokerage, post-trade (e.g. clearing, settlement, custody), andpayments platforms.
+# **what is th2?**
 
-th2 can withstand heavy testing loads, improving test coverage, system quality, andresilience. This is complemented by a range of enhanced data capabilities including fasterdata processing and unified storage of test results. This provides the ability to perform theanalysis of massive amounts of generated test evidence, ensuring regulatory compliance.
+The th2 toolkit is designed to enable efficient machine learning (ML)- driven testing for complex distributed transaction processing systems, such as securities trading systems andexchanges, banking, brokerage, post-trade (e.g. clearing, settlement, custody), and payments platforms.
 
-th2 is a Kubernetes-driven microservices solution. It operates by leveraging a technologystack with an open interface, allowing users to adopt digital technology such as the cloudand distributed ledger technology (DLT). It can integrate with a wide range of existing testtools, frameworks, and network protocols.
+th2 can withstand heavy testing loads, improving test coverage, system quality, and resilience. This is complemented by a range of enhanced data capabilities including faster data processing and unified storage of test results. This provides the ability to perform the analysis of massive amounts of generated test evidence, ensuring regulatory compliance.
 
-**what is th2 for?**
+th2 is a Kubernetes-driven microservices solution. It operates by leveraging a technology stack with an open interface, allowing users to adopt digital technology such as the cloud and distributed ledger technology (DLT). It can integrate with a wide range of existing testtools, frameworks, and network protocols.
 
-Users of th2, such as software development engineers in test (SDET) professionals whocan work equally and effectively as programmers, testers and data analysts - , will be able toexecute sophisticated test algorithms, collect and process distributed test data (e.g. for MLmachine learning purposes), perform model-based testing, and analyse the behaviour of thesystems under test. th2 microservices design allows implementing a large variety ofautomated testing techniques and efficiently combining them to deal with very complex testcases and scenarios.
+# **what is th2 for?**
+
+Users of th2, such as software development engineers in test (SDET) professionals whocan work equally and effectively as programmers, testers and data analysts - , will be able to execute sophisticated test algorithms, collect and process distributed test data (e.g. for MLmachine learning purposes), perform model-based testing, and analyse the behaviour of thesystems under test. th2 microservices design allows implementing a large variety of automated testing techniques and efficiently combining them to deal with very complex test cases and scenarios.
