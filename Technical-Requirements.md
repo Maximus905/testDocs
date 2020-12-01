@@ -31,7 +31,7 @@ __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
 * [Kubernetes - before you begin](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#before-you-begin)
 * Docker registry access from cluster nodes - nexus.exp.exactpro.com:9000, hub.docker.com
 * Test box access to - github.com, index.docker.io, quay.io, k8s.gcr.io, grafana.github.io, charts.bitnami.com, kubernetes-charts.storage.googleapis.com, mirror.centos.org, puppet.exp.exactpro.com
-* Chrome 75 or newer
+* __Chrome__ 75 or newer
 * __Docker CE__ 
 installed with the following parameters in /etc/docker/daemon.json
 ```
