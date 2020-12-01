@@ -29,10 +29,9 @@ __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
  | Cassandra node_n | 4000 MB | 2 | 15 GB for “/ “ mount + 200 GB for “/var“ mount |
    
 ## Software requirements:
-* [Kubernetes - before you begin](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#before-you-begin)
-* Docker registry access from cluster nodes - github.com, hub.docker.com
-* Test box access to - github.com, index.docker.io, quay.io, k8s.gcr.io, grafana.github.io, charts.bitnami.com, kubernetes-charts.storage.googleapis.com, mirror.centos.org, puppet.exp.exactpro.com
-* __Chrome__ 75 or newer
+
+[Kubernetes - before you begin](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#before-you-begin)
+
 * __Docker CE__ 
 installed with the following parameters in /etc/docker/daemon.json
 ```
@@ -64,57 +63,9 @@ installed with the following parameters in /etc/docker/daemon.json
 * __Cassandra 3.11.6__<br>
     Cassandra in-cluster installed in kubernetes (developer mode)<br>
     Cassandra cluster installed separately (production mode)<br>
-    	
-    _Cassandra standalone one-node installation for Centos 7_:
-    ```
-    yum install java-1.8.0-openjdk
-    ```
-    python 2.7.5 or higher is also required
-    ```
-    cat <<EOF | sudo tee /etc/yum.repos.d/cassandra.repo
-    [cassandra]
-    name=Apache Cassandra
-    baseurl=https://downloads.apache.org/cassandra/redhat/311x/
-    gpgcheck=1
-    repo_gpgcheck=1
-    gpgkey=https://downloads.apache.org/cassandra/KEYS
-    EOF
-    ```
-    ```
-    yum install cassandra
-    ```
-    Your `/etc/cassandra/cassandra.yaml` should also contain the following settings:
-    ```
-    authenticator: PasswordAuthenticator
-    authorizer: org.apache.cassandra.auth.CassandraAuthorizer
-    auto_bootstrap: true
-    cluster_name: test-Universum
-    commitlog_directory: "/var/lib/cassandra/commitlog"
-    commitlog_sync: periodic
-    commitlog_sync_period_in_ms: 10000
-    data_file_directories:
-    - "/var/lib/cassandra/data"
-    endpoint_snitch: GossipingPropertyFileSnitch
-    hints_directory: "/var/lib/cassandra/hints"
-    listen_interface: <YOUR NETWORK INTERFACE for example eth0>
-    num_tokens: 256
-    partitioner: org.apache.cassandra.dht.Murmur3Partitioner
-    saved_caches_directory: "/var/lib/cassandra/saved_caches"
-    read_request_timeout_in_ms: 30000
-    range_request_timeout_in_ms: 20000
-    seed_provider:
-    - class_name: org.apache.cassandra.locator.SimpleSeedProvider
-      parameters:
-      - seeds: <IP ADDRESS OF THIS NODE>
-    start_native_transport: true
-    start_rpc: false
-    ```
-    ```
-    service cassandra start
-    ```
-    ```
-    chkconfig cassandra on
-    ```
+* __Chrome 75__ or newer    
+* __Python__
+* __JAVA 11__	
 
 ## Hardware requirements:
 ### Single-control plane cluster
