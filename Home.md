@@ -1,5 +1,3 @@
-Welcome to the **th2** wiki!
-
 ## **th2 - NEXT GENERATION SOFTWARE TESTING FRAMEWORK**
 
 ![](https://github.com/th2-net/th2-documentation/blob/master/th2_logo_2.png)
