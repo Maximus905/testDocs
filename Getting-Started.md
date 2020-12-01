@@ -44,7 +44,7 @@ Get [th2-infra-schema](https://github.com/th2-net/th2-infra-demo-configuration) 
 Details regarding specific cluster setup, required for th2 installation process are available in th2-infra [README.md](https://github.com/th2-net/th2-infra) file.
 
 ## CREATE YOUR FIRST th2 CUSTOM ENVIRONMENT
-In th2 environment is called `infractructure schema` or just `schema`, it's created by the dedicated [infra-mgr](https://github.com/th2-net/th2-infra-mgr) component that watches for changes in the repositories and rolling out schemas from git repository to kubernetes. Please refer to [infra-schema-demo](https://github.com/th2-net/th2-infra-schema-demo) instruction to create your first th2 environment.
+In th2, environment is called `infractructure schema` or just `schema`, it's created by the dedicated [infra-mgr](https://github.com/th2-net/th2-infra-mgr) component that watches for changes in the repositories and rolling out schemas from git repository to kubernetes. Please refer to [infra-schema-demo](https://github.com/th2-net/th2-infra-schema-demo) instruction to create your first th2 environment.
 
 
 ## GET AND RUN DEMO SCRIPT
