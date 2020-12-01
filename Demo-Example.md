@@ -7,7 +7,11 @@ In this example we will show how to implement a few simple types of tests agains
 * [Autonomous real-time reconciliation algorithm comparing multiple data streams during tests](https://github.com/th2-net/th2-documentation/wiki/_new#use-case-2-rule-based-checking)
 * [Simplified emulation of the trading system](https://github.com/th2-net/th2-documentation/wiki/_new#use-case-3-simulation-of-multiple-endpoints)
 
+![](https://github.com/th2-net/th2-documentation/blob/master/images/th2architecture/th2_HL_schema.png)
+
 ## PREREQUISITES
+
+
 
 ## THEORY OF TH2
 Let’s consider the components which we have in the demo configuration. 
@@ -18,7 +22,7 @@ Let’s consider the components which we have in the demo configuration.
 
 In addition we have a dictionary with the FIX protocol version, which is used by our components `conn` and `codec`. The `codec` will be used to encode/decode messages while the dictionary contains the description of version specific protocol messages. The `conn` component is used to communicate with the target system. A description with the connections between these components is represented in the diagram below:
 
-![](https://github.com/th2-net/th2-documentation/blob/master/th2_schema.png)
+![](https://github.com/th2-net/th2-documentation/blob/master/images/th2architecture/th2_schema.png)
 
 
 ## DEMO EXAMPLE RUN
