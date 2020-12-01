@@ -16,9 +16,17 @@ More information regarding the use cases covered in the demo example, it's confi
 
 
 ## INSTALL REQUIRED SOFTWARE
-th2 is a Kubernetes-driven microservices solution.
+th2 is a Kubernetes-driven microservices solution. So, to start with th2 you would need the fully functional Kubernetes cluster installed on your test-box/test-boxes, please also check if your **test-box** and **operator-box** meets th2 software [th2 requirements](https://github.com/th2-net/th2-documentation/wiki/Technical-Requirements#software-requirements)
+
+Minimal hardware th2 requirements for demo example:
+* 6 CPU cores
+* 16 GB RAM
+* 100 GB disk space
+
+If you would like to enhance demo configuration with additional boxes, please check [th2 technical requirements](https://github.com/th2-net/th2-documentation/wiki/Technical-Requirements).
+
 ## DOWNLOAD th2 TO YOUR GIT REPOSITORY
-th2 components should be copied to your Git repository if you would like to try th2 custom componets, modify them based on your business logic or evaluate th2 onboarding process. If, at this step, you do not want to make any changes,but just run demo example without any modifications this step can be skipped. 
+th2 components should be copied to your Git repository if you would like to try th2 custom componets, modify them based on your business logic or evaluate th2 onboarding process. If, at this step, you do not want to make any changes,but just run demo example without any modifications, this step can be skipped. 
 
 You would need the following:
 - [th2-infra](https://github.com/th2-net/th2-infra) for core platform
@@ -33,9 +41,11 @@ You would need the following:
 Get [th2-infra-schema](https://github.com/th2-net/th2-infra-demo-configuration) for custom components and copy or fork to your GIT repository.
 
 ## SET UP YOUR CLUSTER AND INSTULL th2
-
+Details regarding specific cluster setup, required for th2 installation process are available in th2-infra [README.md](https://github.com/th2-net/th2-infra) file.
 
 ## CREATE YOUR FIRST th2 CUSTOM ENVIRONMENT
+In th2 environment is called `infractructure schema` or just `schema`, it's created by the dedicated [infra-mgr](https://github.com/th2-net/th2-infra-mgr) component that watches for changes in the repositories and rolling out schemas from git repository to kubernetes. Please refer to [infra-schema-demo](https://github.com/th2-net/th2-infra-schema-demo) instruction to create your first th2 environment.
+
 
 ## GET AND RUN DEMO SCRIPT
 Copy [th2-script-demo](https://github.com/th2-net/th2-demo-script) example to your GIT and run it based on the following instruction:
