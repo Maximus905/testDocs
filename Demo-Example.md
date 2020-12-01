@@ -10,8 +10,23 @@ In this example we will show how to implement a few simple types of tests agains
 ![](https://github.com/th2-net/th2-documentation/blob/master/images/th2architecture/th2_HL_schema.png)
 
 ## PREREQUISITES
+To start using TH2 you have to configure the Kubernetes cluster. You can find the [hints](https://github.com/th2-net/th2-documentation/wiki/Centos-7-kubernetes-and-cassandra-installation-guide) on how to set up your Kubernetes <here>. 
 
+After installing all the core components in the cluster Kubernetes, you can use the th2 demo configuration of the th2 environment.  
 
+### To set up custom parameters of th2 follow the steps:
+
+1. Copy the content of [repository](https://github.com/th2-net/th2-infra-demo-configuration) to your git repository. For gitlab you can use the ‘Import project’ option to create a new repository.
+2. Connect your new repository to `infra-mgr`. Please find the hints <here>.
+3. To set up read-log follow next steps:
+* Create the directory for storage `read-log` files;
+* Specify the path to the directory in `config.yaml` file;
+* Place the files from the [th2-read-log/example](https://github.com/th2-net/th2-read-log/tree/master/examples) to your directory.
+4. Specify the parameter `k8s-propagation` in `infra-mgr-config.yml` file. Specify it as ‘rule’ or ‘sync’ for the `infra-mgr` to start the installation. Please note that namespace’s name with this configuration in Kubernetes will have the same name as the branch name and have the prefix `schema_`. 
+5. To set up all the necessary dependencies, you need to install the packages from requirements.txt. This can be done with `pip install -r requirements.txt`.
+> Note that `infra-mgr-config.yml` file content a list of possible parameters for `k8s-propagation` and parameter description.
+
+As the result of these steps `infra-mgr` will create a new namespace in your Kubernetes and rise up all components from current configuration. The related namespace with all the necessary settings will be set up automatically with `infra-mng` after you’ll copy the config to your branch.
 
 ## THEORY OF TH2
 Let’s consider the components which we have in the demo configuration. 
@@ -84,6 +99,12 @@ Use case is based on the following th2 components :
 * th2-conn
 * th2 custom 
 * th2-sim
+
+Simulator is the service for simulating different logic. All logic contains in a Rules. You can turn on/off rules for different connections or some rules for one connection. This project is java framework for creating custom the Simulator.
+
+Simulator is a flexible instrument, which allows to simulate different systems. 
+
+To learn more how to install and set up your Simulator follow the [link](https://github.com/th2-net/th2-sim).
 
 ## USE CASE #4: Verification
 Th2 has a web-based GUI, which helps to manage and analyze test data. The GUI is divided into two parts: Events and Messages.
