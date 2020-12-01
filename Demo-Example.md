@@ -31,7 +31,7 @@ In addition we have a dictionary with the FIX protocol version, which is used by
 
 ## DEMO EXAMPLE RUN
 
-If you installed th2 using the [Getting Started](https://github.com/th2-net/th2-documentation/wiki/Getting-Started/) instructions, you already have [th2-demo-script] and you can run this example from your PC. If not, please refer to the [GET AND RUN DEMO SCRIPT](https://github.com/th2-net/th2-documentation/wiki/Getting-Started#get-and-run-demo-script) guide first.
+If you installed th2 using the [Getting Started](https://github.com/th2-net/th2-documentation/wiki/Getting-Started/) instructions, you already have [th2-demo-script](https://github.com/th2-net/th2-demo-script) and can run this example from your PC. If not, please refer to the [GET AND RUN DEMO SCRIPT](https://github.com/th2-net/th2-documentation/wiki/Getting-Started#get-and-run-demo-script) guide first.
 
 
 The script represents the set of sending messages to the system and getting the responses from the system.
@@ -107,13 +107,12 @@ Use case is based on the following th2 components :
 * th2 custom 
 * th2-sim
 
-Simulator is the service for simulating different logic. All logic contains in a Rules. You can turn on/off rules for different connections or some rules for one connection. This project is java framework for creating custom the Simulator.
-
+Simulator is the service for simulating different logic. All logic contains in a Rules. You can turn on/off rules for different connections or some rules for one connection.
 Simulator is a flexible instrument, which allows to simulate different systems. 
 
 To learn more about how to install and set up your Simulator follow the [link](https://github.com/th2-net/th2-sim).
 
 ## USE CASE #4: Verification
-Th2 has a web-based GUI, which helps to manage and analyze test data. The GUI is divided into two parts: Events and Messages.
+All raw messages and test events are stored in the centralised data lake and then shown in a web-based GUI, which helps to manage and analyze test data. The GUI is divided into two parts: Events and Messages.
 
-On the Event tab you can see the list of executed scripts. Each script has a tree of actions which is called events. Events may contain different data: information about sending messages, incoming messages, comparison tables, where you can check that expected and actual results match or don’t match.
+On the Event tab you can see the tree of all executed test cases(act events, check1 events, check2-recon events, conn events). Events may contain different data: information about sending messages, incoming messages, comparison tables, where you can check that expected and actual results match or don’t match.
