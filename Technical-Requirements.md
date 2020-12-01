@@ -1,3 +1,4 @@
+
 Сomponents calculations:  
 __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
 
@@ -29,7 +30,7 @@ __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
    
 ## Software requirements:
 * [Kubernetes - before you begin](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#before-you-begin)
-* Docker registry access from cluster nodes - nexus.exp.exactpro.com:9000, hub.docker.com
+* Docker registry access from cluster nodes - github.com, hub.docker.com
 * Test box access to - github.com, index.docker.io, quay.io, k8s.gcr.io, grafana.github.io, charts.bitnami.com, kubernetes-charts.storage.googleapis.com, mirror.centos.org, puppet.exp.exactpro.com
 * __Chrome__ 75 or newer
 * __Docker CE__ 
@@ -61,8 +62,8 @@ installed with the following parameters in /etc/docker/daemon.json
 * __Git repositories__ for apps and infrastructure code
 * __Helm 3+__ utility for th2 components deployment into kubernetes
 * __Cassandra 3.11.6__<br>
-    Cassandra in-cluster installed in kubernetes (developer mode)
-    Cassandra cluster installed separately (production mode)
+    Cassandra in-cluster installed in kubernetes (developer mode)<br>
+    Cassandra cluster installed separately (production mode)<br>
     	
     _Cassandra standalone one-node installation for Centos 7_:
     ```
