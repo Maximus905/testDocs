@@ -4,6 +4,7 @@
 - [Technical Requirements](https://github.com/th2-net/th2-documentation/wiki/Technical-Requirements)
 ---
 - Architecture
+  - [th2 dependencies](https://github.com/th2-net/th2-documentation/wiki/th2-dependencies)
 ---
 - Tutorials
   - [check1: Chain Verification](https://github.com/th2-net/th2-documentation/wiki/Check-and-Chain-Verification)
