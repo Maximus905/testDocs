@@ -28,15 +28,92 @@ __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
  | Cassandra node_n | 4000 MB | 2 | 15 GB for “/ “ mount + 200 GB for “/var“ mount |
    
 ## Software requirements:
-Kubernetes cluster with Docker installed or as cloud managed service
-
-https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#before-you-begin
-
-* Apache Cassandra cluster installed
+* [Kubernetes - before you begin](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#before-you-begin)
 * Docker registry access from cluster nodes - nexus.exp.exactpro.com:9000, hub.docker.com
-* Distributed storage (not yet)
 * Test box access to - github.com, index.docker.io, quay.io, k8s.gcr.io, grafana.github.io, charts.bitnami.com, kubernetes-charts.storage.googleapis.com, mirror.centos.org, puppet.exp.exactpro.com
 * Chrome 75 or newer
+* __Docker CE__ 
+installed with the following parameters in /etc/docker/daemon.json
+```
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m" 
+  },
+  "storage-driver": "overlay2"
+}
+```
+* [__Overlay2 storage driver prerequisites__](https://docs.docker.com/storage/storagedriver/overlayfs-driver/#prerequisites)
+* __Docker registry__ with push permissions for storing containerized application images
+* __Kubernetes__
+  Kubernetes cluster installed (single master node as development mode, master and 2+ workers as production mode) with the [flannel CNI plugin](https://coreos.com/flannel/docs/latest/kubernetes.html#the-flannel-cni-plugin) . [Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
+    
+  Flannel CNI installation:
+  ```
+  kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+  ```
+  
+  If you want to be able to schedule Pods on the control-plane node, for example for a single-machine Kubernetes cluster for development, run:
+  ```
+  kubectl taint nodes --all node-role.kubernetes.io/master-
+  ```
+* __Git repositories__ for apps and infrastructure code
+* __Helm 3+__ utility for th2 components deployment into kubernetes
+* __Cassandra 3.11.6__<br>
+    Cassandra in-cluster installed in kubernetes (developer mode)
+    Cassandra cluster installed separately (production mode)
+    	
+    _Cassandra standalone one-node installation for Centos 7_:
+    ```
+    yum install java-1.8.0-openjdk
+    ```
+    python 2.7.5 or higher is also required
+    ```
+    cat <<EOF | sudo tee /etc/yum.repos.d/cassandra.repo
+    [cassandra]
+    name=Apache Cassandra
+    baseurl=https://downloads.apache.org/cassandra/redhat/311x/
+    gpgcheck=1
+    repo_gpgcheck=1
+    gpgkey=https://downloads.apache.org/cassandra/KEYS
+    EOF
+    ```
+    ```
+    yum install cassandra
+    ```
+    Your `/etc/cassandra/cassandra.yaml` should also contain the following settings:
+    ```
+    authenticator: PasswordAuthenticator
+    authorizer: org.apache.cassandra.auth.CassandraAuthorizer
+    auto_bootstrap: true
+    cluster_name: test-Universum
+    commitlog_directory: "/var/lib/cassandra/commitlog"
+    commitlog_sync: periodic
+    commitlog_sync_period_in_ms: 10000
+    data_file_directories:
+    - "/var/lib/cassandra/data"
+    endpoint_snitch: GossipingPropertyFileSnitch
+    hints_directory: "/var/lib/cassandra/hints"
+    listen_interface: <YOUR NETWORK INTERFACE for example eth0>
+    num_tokens: 256
+    partitioner: org.apache.cassandra.dht.Murmur3Partitioner
+    saved_caches_directory: "/var/lib/cassandra/saved_caches"
+    read_request_timeout_in_ms: 30000
+    range_request_timeout_in_ms: 20000
+    seed_provider:
+    - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+      parameters:
+      - seeds: <IP ADDRESS OF THIS NODE>
+    start_native_transport: true
+    start_rpc: false
+    ```
+    ```
+    service cassandra start
+    ```
+    ```
+    chkconfig cassandra on
+    ```
 
 ## Hardware requirements:
 ### Single-control plane cluster
@@ -72,3 +149,4 @@ You need:
    
 For the external etcd cluster only, you also need:
 * Three additional machines for etcd members   
+
