@@ -15,7 +15,6 @@ __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
 | th2 in-cluster connectivity services | 200 MB * n | 200 m * n | Depends on number of connectivity instances. 1 Connectivity service * n e.g. if we have 10 connectivity instances: 200 MB * 10 = 2000 MB|
 | th2 codec, act | 200 MB * n | 200 m * n |  |
 | th2 check1 |  |  |  |
-| th2 C++ read | 2000 MB * n | 200 m * n |  |
 | th2 Java read  | 200 MB * n | 200 m * n |  |
 | th2 recon | 200 MB * n | 200 m * n | cacheSize = (podMemoryLimit - 70MB) / (AvrRawMsgSize * 10 * (SUM(number of group in rule))) |
 | th2 check2 | 800 MB * n  | 200 m * n |  |
