@@ -1,6 +1,6 @@
 ## **th2 - NEXT GENERATION SOFTWARE TESTING FRAMEWORK**
 
-![](https://github.com/th2-net/th2-documentation/blob/master/images/th2logo/th2_logo_2.png)
+![](https://github.com/th2-net/th2-documentation/blob/master/images/th2logo/th2_logo_2.png) [**th2 - GETTING STARTED!**](https://github.com/th2-net/th2-documentation/wiki/Getting-Started)
 
 # **what is th2?**
 
