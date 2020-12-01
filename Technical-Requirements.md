@@ -1,11 +1,24 @@
 Сomponents calculations:  
 __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
+
 | Base & Core Components | Memory (MB) | CPU (millicores) | Comment |
 |-----|------|---------|-------------|
 | th2 infra | 1000 MB | 800 m | helm, infra-mgr, infra-editor, infra-operator |
+| th2 core | 2500 MB | 2000 m | mstore, estore, rpt-provider, rpt-viewer |
+| Rabbitmq replica 1 | 2000 MB | 1000 m | need to test |
+| Monitoring | 1500 MB | 2000 m | |
+| Other supporting components | 500 MB | 250 m | e.g. in-cluster CD system, ingress and etc |
 
 | Custom & Building blocks components | Memory (MB) | CPU (millicores) | Comment |
 |-----|------|---------|-------------|
+| th2 in-cluster connectivity services | 200 MB * n | 200 m * n | Depends on number of connectivity instances. 1 Connectivity service * n e.g. if we have 10 connectivity instances: 200 MB * 10 = 2000 MB|
+| th2 codec, act | 200 MB * n | 200 m * n |  |
+| th2 check1 |  |  |  |
+| th2 C++ read | 2000 MB * n | 200 m * n |  |
+| th2 Java read  | 200 MB * n | 200 m * n |  |
+| th2 recon | 200 MB * n | 200 m * n | cacheSize = (podMemoryLimit - 70MB) / (AvrRawMsgSize * 10 * (SUM(number of group in rule))) |
+| th2 check2 | 800 MB * n  | 200 m * n |  |
+| th2 hand | 300 MB * n | 400 m * n |  |
 
 ## Apache Cassandra cluster hardware requirements
    Though it is possible to use Cassandra single-node installation, generally it’s recommended to setup at least 3-nodes cluster. Requirements to each node are the same.
@@ -59,22 +72,3 @@ You need:
    
 For the external etcd cluster only, you also need:
 * Three additional machines for etcd members   
-   
-   
-   
-   
-   
-   
-   
-   
-
-
-
-
-
-
-
-
-
-
-
