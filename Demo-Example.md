@@ -80,3 +80,5 @@ Use case is based on the following th2 components :
 * th2-conn
 * th2 custom 
 * th2-sim
+
+## USE CASE #4: Verification
