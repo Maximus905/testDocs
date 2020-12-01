@@ -18,7 +18,7 @@ More information regarding the use cases covered in the demo example, it's confi
 ## INSTALL REQUIRED SOFTWARE
 th2 is a Kubernetes-driven microservices solution.
 ## DOWNLOAD th2 TO YOUR GIT REPOSITORY
-th2 components should be copied to your Git repository if you would like to try th2 custom componets, modify them based on your business logic or evaluate th2 onboarding process. If, at this step, you do not want to make any changes and just run demo example without any modifications this step can be skipped. 
+th2 components should be copied to your Git repository if you would like to try th2 custom componets, modify them based on your business logic or evaluate th2 onboarding process. If, at this step, you do not want to make any changes,but just run demo example without any modifications this step can be skipped. 
 
 You would need the following:
 - [th2-infra](https://github.com/th2-net/th2-infra) for core platform
