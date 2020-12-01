@@ -10,7 +10,12 @@ In this example we will show how to implement a few simple types of tests agains
 ![](https://github.com/th2-net/th2-documentation/blob/master/images/th2architecture/th2_HL_schema.png)
 
 ## PREREQUISITES
+1. Core Kubernetes components;
+2. Kubernetes namespace;
+3. Your git repository;
+4. Python environment 3.7+
 
+To learn more about how to prepare your system follow the [link](https://github.com/th2-net/th2-documentation/wiki/Getting-Started). Please make sure that your system corresponds to the [technical requirements](https://github.com/th2-net/th2-documentation/wiki/Technical-Requirements). 
 
 ## THEORY OF TH2
 Let’s consider the components which we have in the demo configuration. 
@@ -25,6 +30,32 @@ In addition we have a dictionary with the FIX protocol version, which is used by
 
 
 ## DEMO EXAMPLE RUN
+### To set up the script:
+1. Copy to your repository content from the [link](https://github.com/th2-net/th2-demo-script)
+2. Get python environment 3.7+ (e.g. conda).
+> Recommended: get IDE to work with python (e.g. pycharm, spyder). You can also start this script from the command line, but IDE will make this process more convenient.
+3. Import the libraries described in requirements.txt;
+4. Set up configs from directory configs (`mq.json`, `rabbit.json`, `grpc.json`) according to your components. 
+* `grpc.json` describes access to components act, check1.
+* `rabbit.json` describes access to rabbitmq.
+* `mq.json` describes queues used in rabbitmq.
+> All required parameters you can find in Kubernetes. Instruction about these parameters you can find in the corresponding files.
+5. Run `AgressiveIOC_Traded_against_TwoOrders_partially_and_Cancelled.py`.
+
+The script represents the set of sending messages to the system and getting the responses from the system.
+
+When sending the message, script sends a grpc request to the `act` component with instructions which message in which connector have to be sent. Act transfers the message to the `conn` client component. Then, based on the used grpc call, it starts to find the message which will be the response from the system on the message we’ve sent.
+
+The `conn` client component gets the th2 message from the `act`, forms the FIX message based on a dictionary and then sends it to the `conn` server on FIX protocol. 
+
+The `sim` gets this message from the `conn` server and creates a response on it, simulating remote system behavior. 
+
+The response returns on the `conn` server and then transfers to the `conn` client on FIX protocol. Then response goes to the `codec`, where it’s decoded into human readable th2 format which is also clear to the other components.
+From the codec all the messages come to the `act`, to the `check1` for verifying on requests from script and to the `recon` for passive verification.
+
+When checking, the script sends a grpc request to `check1` with instructions on messages verification. This instructions content expected result on each message we want to verify. 
+
+Also component `recon` performs the passive verification during all the env work.
 
 ## USE CASE #1: Lineal test automation
 Use case is based on the following th2 components :
@@ -88,7 +119,7 @@ Simulator is the service for simulating different logic. All logic contains in a
 
 Simulator is a flexible instrument, which allows to simulate different systems. 
 
-To learn more how to install and set up your Simulator follow the [link](https://github.com/th2-net/th2-sim).
+To learn more about how to install and set up your Simulator follow the [link](https://github.com/th2-net/th2-sim).
 
 ## USE CASE #4: Verification
 Th2 has a web-based GUI, which helps to manage and analyze test data. The GUI is divided into two parts: Events and Messages.
