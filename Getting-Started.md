@@ -30,11 +30,24 @@ You would need the following:
      - [th2-act-template](https://github.com/th2-net/th2-act-template-j)
 ## DOWNLOAD th2 DEMO EXAMPLE TO YOUR GIT REPOSITORY
 
-Get [th2-infra-schema](https://github.com/th2-net/th2-infra-demo-configuration) for custom components
+Get [th2-infra-schema](https://github.com/th2-net/th2-infra-demo-configuration) for custom components and copy or fork to your GIT repository.
+
 ## SET UP YOUR CLUSTER AND INSTULL th2
+
 
 ## CREATE YOUR FIRST th2 CUSTOM ENVIRONMENT
 
 ## GET AND RUN DEMO SCRIPT
-Run [th2-script-demo](https://github.com/th2-net/th2-demo-script)
+Copy [th2-script-demo](https://github.com/th2-net/th2-demo-script) example to your GIT and run it based on the following instruction:
+Steps:
+1. Copy to your repository content from the [link](https://github.com/th2-net/th2-demo-script)
+2. Get python environment 3.7+ (e.g. conda).
+> Recommended: get IDE to work with python (e.g. pycharm, spyder). You can also start this script from the command line, but IDE will make this process more convenient.
+3. Import the libraries described in **requirements.txt**;
+4. Set up configs from directory configs (`mq.json`, `rabbit.json`, `grpc.json`) according to your components. 
+* `grpc.json` describes access to components act, check1.
+* `rabbit.json` describes access to rabbitmq.
+* `mq.json` describes queues used in rabbitmq.
+> All required parameters you can find in Kubernetes. Instruction about these parameters you can find in the corresponding files.
+5. Run `AgressiveIOC_Traded_against_TwoOrders_partially_and_Cancelled.py`.
 
