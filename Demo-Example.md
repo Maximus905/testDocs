@@ -30,17 +30,9 @@ In addition we have a dictionary with the FIX protocol version, which is used by
 
 
 ## DEMO EXAMPLE RUN
-### To set up the script:
-1. Copy to your repository content from the [link](https://github.com/th2-net/th2-demo-script)
-2. Get python environment 3.7+ (e.g. conda).
-> Recommended: get IDE to work with python (e.g. pycharm, spyder). You can also start this script from the command line, but IDE will make this process more convenient.
-3. Import the libraries described in requirements.txt;
-4. Set up configs from directory configs (`mq.json`, `rabbit.json`, `grpc.json`) according to your components. 
-* `grpc.json` describes access to components act, check1.
-* `rabbit.json` describes access to rabbitmq.
-* `mq.json` describes queues used in rabbitmq.
-> All required parameters you can find in Kubernetes. Instruction about these parameters you can find in the corresponding files.
-5. Run `AgressiveIOC_Traded_against_TwoOrders_partially_and_Cancelled.py`.
+
+If you installed th2 using the [Getting Started](https://github.com/th2-net/th2-documentation/wiki/Getting-Started/) instructions, you already have [th2-demo-script] and you can run this example from your PC. If not, please refer to the [GET AND RUN DEMO SCRIPT](https://github.com/th2-net/th2-documentation/wiki/Getting-Started#get-and-run-demo-script) guide first.
+
 
 The script represents the set of sending messages to the system and getting the responses from the system.
 
