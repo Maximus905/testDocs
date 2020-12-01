@@ -29,7 +29,7 @@ In addition we have a dictionary with the FIX protocol version, which is used by
 ## USE CASE #1: Lineal test automation
 Use case is based on the following th2 components :
 
-**th2 infra and core** - th2 core and infra components are required for all th2 custom implementations, more details can be found in the [th2 installation guide](https://github.com/th2-net/th2-infra) 
+**th2 infra and core** - th2 core and infra components are required for all th2 custom implementations, more details can be found in the [th2 installation guide](https://github.com/th2-net/th2-sim/blob/master/README.md) 
 
 **th2 building blocks:**
 * th2-check1
