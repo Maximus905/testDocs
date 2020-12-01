@@ -67,8 +67,9 @@ Use case is based on the following th2 components :
 **th2 custom** 
 * th2-check2-recon
 
->> to be added about RECON
+Recon allows to compare message flows with each other using certain scenarios called rules.
 
+Let's look at he life cycle of messages coming in recon. When message comes to the rule, method `group` is called. This method calculate in which group the message should be placed. Then with `hash` method the message's hash is calculated. The system looks for the messages with the same hash in other groups. If there are messages with particular hash in each group, method check is called for these messages fro more detailed reconciliation. The result is displayed in GUI.
  
 ## USE CASE #3: Simulation of multiple endpoints
 Use case is based on the following th2 components :
