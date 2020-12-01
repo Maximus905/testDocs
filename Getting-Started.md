@@ -7,7 +7,7 @@ More information regarding the use cases covered in the demo example, it's confi
 
 ## GETTING STARTED WITH th2
 **Follow these steps to get started with th2:**
-1. [Install required software](https://github.com/th2-net/th2-documentation/wiki/Getting-Started/_edit#install-required-software)
+1. [Install required software to the **test-box** and **operator-box**](https://github.com/th2-net/th2-documentation/wiki/Getting-Started/_edit#install-required-software)
 2. [Download th2 to your Git repository](https://github.com/th2-net/th2-documentation/wiki/Getting-Started/_edit#download-th2-to-your-git-repository)
 3. [Download th2 **Demo Example** configuration to your Git repository](https://github.com/th2-net/th2-documentation/wiki/Getting-Started/_edit#download-th2-demo-example-to-your-git-repository)
 3. [Set up your cluster and Install th2](https://github.com/th2-net/th2-documentation/wiki/Getting-Started/_edit#set-up-your-cluster-and-instull-th2)
