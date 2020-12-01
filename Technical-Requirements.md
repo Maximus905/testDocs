@@ -35,7 +35,7 @@ https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-clu
 * Apache Cassandra cluster installed
 * Docker registry access from cluster nodes - nexus.exp.exactpro.com:9000, hub.docker.com
 * Distributed storage (not yet)
-* Test box access to - gitlab.exactpro.com, index.docker.io, quay.io, k8s.gcr.io, grafana.github.io, charts.bitnami.com, kubernetes-charts.storage.googleapis.com, mirror.centos.org, puppet.exp.exactpro.com
+* Test box access to - github.com, index.docker.io, quay.io, k8s.gcr.io, grafana.github.io, charts.bitnami.com, kubernetes-charts.storage.googleapis.com, mirror.centos.org, puppet.exp.exactpro.com
 * Chrome 75 or newer
 
 ## Hardware requirements:
