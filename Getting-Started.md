@@ -32,7 +32,9 @@ You would need the following:
 
 Get [th2-infra-schema](https://github.com/th2-net/th2-infra-demo-configuration) for custom components
 ## SET UP YOUR CLUSTER AND INSTULL th2
+
 ## CREATE YOUR FIRST th2 CUSTOM ENVIRONMENT
+
 ## GET AND RUN DEMO SCRIPT
-6. Run [th2-script-demo](https://github.com/th2-net/th2-demo-script)
+Run [th2-script-demo](https://github.com/th2-net/th2-demo-script)
 
