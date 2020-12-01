@@ -2,7 +2,7 @@
 This is the example of how to use th2 test toolkit. In this example you will study how to install, set up and run th2. The demo script helps you to understand how to work with th2 and what functions it can provide. 
 We’ll look at the example which will show how th2 modules cooperate with each other to perform test scenarios. We’ll see how the th2 script will generate and send the messages, get the response from the system, store and check test data.
 
-![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/th2_HL_schema.png)
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/images/th2architecture/th2_HL_schema.png)
 
 ## 2. INSTALLATION AND SETTING TH2
 To start using TH2 you have to configure the Kubernetes cluster. You can find the [hints](https://github.com/th2-net/th2-documentation/wiki/Centos-7-kubernetes-and-cassandra-installation-guide) on how to set up your Kubernetes <here>. 
@@ -32,7 +32,7 @@ Let’s consider the components which we have in the demo configuration.
 
 In addition we have a dictionary with the FIX protocol version, which is used by our components `conn` and `codec`. The `codec` will be used to encode/decode messages while the dictionary contains the description of version specific protocol messages. The `conn` component is used to communicate with the target system. A description with the connections between these components is represented in the diagram below:
 
-![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/th2_schema_components.png)
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/images/th2architecture/th2_schema.png)
 
 ### Recon
 Recon allows to compare message flows with each other using certain scenarios called rules.
@@ -95,9 +95,9 @@ For our example, you can see all executed steps. First of all we request securit
 
 Now let’s look at the 6th Case. As you can see it’s red, meaning that scenario failed in this case. It happened because we try to send orders on INSTR6, which doesn’t exist in the sim system. This example shows how th2 works with unexpected behavior of systems. It informs us that we find the bug.
 
-![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/demo1_gui1.gif)
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/images/th2architecture/demo1_gui1.gif)
 
-![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/demo1_gui2.gif)
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/images/th2architecture/demo1_gui2.gif)
 
 The Message tab is the list of outcoming and incoming messages. It is linked with Events. When you choose an event with a message, this message is displayed on the list in the Message tab. Also you can navigate through the message list without reference to any event for extra analysis. 
 
@@ -115,4 +115,4 @@ In our demo example we configured recon with two rules: `rule_1` and `rule_2`.
 
 `Rule_2` (displayed as `"FIX vs DC"` in GUI) compares `ExecutionReports` from  FIX conn and DC conn. The messages are matched by `ClOrdID`, `ExecType` and `ExecID` fields. As the script result will see two `ExecutionReports` for both `Order1` and `Order2` and three `ExecutionReports` for `Order3`. 
 
-![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/demo1_gui3.gif)
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/images/th2architecture/demo1_gui3.gif)
