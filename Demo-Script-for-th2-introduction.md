@@ -2,6 +2,8 @@
 This is the example of how to use th2 test toolkit. In this example you will study how to install, set up and run th2. The demo script helps you to understand how to work with th2 and what functions it can provide. 
 We’ll look at the example which will show how th2 modules cooperate with each other to perform test scenarios. We’ll see how the th2 script will generate and send the messages, get the response from the system, store and check test data.
 
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/th2_HL_schema.png)
+
 ## 2. INSTALLATION AND SETTING TH2
 To start using TH2 you have to configure the Kubernetes cluster. You can find the [hints](https://github.com/th2-net/th2-documentation/wiki/Centos-7-kubernetes-and-cassandra-installation-guide) on how to set up your Kubernetes <here>. 
 
@@ -30,7 +32,7 @@ Let’s consider the components which we have in the demo configuration.
 
 In addition we have a dictionary with the FIX protocol version, which is used by our components `conn` and `codec`. The `codec` will be used to encode/decode messages while the dictionary contains the description of version specific protocol messages. The `conn` component is used to communicate with the target system. A description with the connections between these components is represented in the diagram below:
 
-![](https://github.com/th2-net/th2-documentation/blob/master/th2_schema.png)
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/th2_schema_components.png)
 
 ### Recon
 Recon allows to compare message flows with each other using certain scenarios called rules.
