@@ -44,16 +44,16 @@ Use case is based on the following th2 components :
 Trader1 sends to the Demo Exchange system (simulated by the independant th2 module) two Buy Orders with different prices and quantities. After that, Trader2 will send an IOC Sell Order to the system with the price lower than both of the Trader1 Orders’ prices. In this demo scenario th2 verify the response received from the Demo Exchange and trade results. Scenario will be performed in several variations with different parameters.
 
 **Test Scenario:**
-* User1 submit buy order with Price=x and Size=30 - Order1
+* User1 submit buy order with Price=x and Size=30 - **Order1**
 * User1 receives an Execution Report with ExecType=0
-* User1 submit buy order with Price=x+1 and Size=10 - Order2
+* User1 submit buy order with Price=x+1 and Size=10 - **Order2**
 * User1 receives an Execution Report with ExecType=0
-* User2 submit sell IOC order with price=x-1 and Size=100 - Order3
-* User1 receives an Execution Report with ExecType=F on trade between Order2 and Order3
-* User2 receives an Execution Report with ExecType=F on trade between Order3 and Order2
-* User1 receives an Execution Report with ExecType=F on trade between Order1 and Order3
-* User2 receives an Execution Report with ExecType=F on trade between Order3 and Order1
-* User2 receives an Execution Report with ExecType=C on expired Order3
+* User2 submit sell IOC order with price=x-1 and Size=100 - **Order3**
+* User1 receives an Execution Report with ExecType=F on trade between **Order2** and **Order3**
+* User2 receives an Execution Report with ExecType=F on trade between **Order3** and **Order2**
+* User1 receives an Execution Report with ExecType=F on trade between **Order1** and **Order3**
+* User2 receives an Execution Report with ExecType=F on trade between **Order3** and **Order1**
+* User2 receives an Execution Report with ExecType=C on expired **Order3**
 
 ## USE CASE #2: Rule-based checking
 Use case is based on the following th2 components :
