@@ -67,9 +67,11 @@ Use case is based on the following th2 components :
 **th2 custom** 
 * th2-check2-recon
 
-Recon allows to compare message flows with each other using certain scenarios called rules.
+In our demo example we configured recon with two rules: `rule_1` and `rule_2`.
 
-Let's look at he life cycle of messages coming in recon. When message comes to the rule, method `group` is called. This method calculate in which group the message should be placed. Then with `hash` method the message's hash is calculated. The system looks for the messages with the same hash in other groups. If there are messages with particular hash in each group, method check is called for these messages fro more detailed reconciliation. The result is displayed in GUI.
+`Rule_1` (displayed as `"demo-conn1 vs demo-conn2"` in GUI) shows the trades between DEMO-CONN1 and DEMO-CONN2 traders. We expect to see one `ExecutionReport` from both `demo-conn1` and `demo-conn2` traders with the certain session_alias. Then if the field values of key field `TrdMatchID` will be matched, the reconciliation will occur.
+
+`Rule_2` (displayed as `"FIX vs DC"` in GUI) compares `ExecutionReports` from  FIX conn and DC conn. The messages are matched by `ClOrdID`, `ExecType` and `ExecID` fields. As the script result will see two `ExecutionReports` for both `Order1` and `Order2` and three `ExecutionReports` for `Order3`.
  
 ## USE CASE #3: Simulation of multiple endpoints
 Use case is based on the following th2 components :
