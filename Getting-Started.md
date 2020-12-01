@@ -39,7 +39,8 @@ Get [th2-infra-schema](https://github.com/th2-net/th2-infra-demo-configuration) 
 
 ## GET AND RUN DEMO SCRIPT
 Copy [th2-script-demo](https://github.com/th2-net/th2-demo-script) example to your GIT and run it based on the following instruction:
-Steps:
+
+**Steps:**
 1. Copy to your repository content from the [link](https://github.com/th2-net/th2-demo-script)
 2. Get python environment 3.7+ (e.g. conda).
 > Recommended: get IDE to work with python (e.g. pycharm, spyder). You can also start this script from the command line, but IDE will make this process more convenient.
