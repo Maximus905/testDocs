@@ -54,11 +54,11 @@ Copy [th2-script-demo](https://github.com/th2-net/th2-demo-script) example to yo
 1. Copy to your repository content from the [link](https://github.com/th2-net/th2-demo-script)
 2. Get python environment 3.7+ (e.g. conda).
 > Recommended: get IDE to work with python (e.g. pycharm, spyder). You can also start this script from the command line, but IDE will make this process more convenient.
-3. Import the libraries described in **requirements.txt**;
+3. Import the libraries described in **requirements.txt**
+> requirements.txt contain standart packages to work with grpc (e.g. google-api-core) and custom packages to work with th2 boxes. Please note that grpc client (script) and grpc server (th2 box) should use the same package. You can find more information about `requirements.txt` and package installation here: https://pip.pypa.io/en/stable/user_guide/#requirements-files
 4. Set up configs from directory configs (`mq.json`, `rabbit.json`, `grpc.json`) according to your components. 
-* `grpc.json` describes access to components act, check1.
-* `rabbit.json` describes access to rabbitmq.
-* `mq.json` describes queues used in rabbitmq.
-> All required parameters you can find in Kubernetes. Instruction about these parameters you can find in the corresponding files.
+* Fill `grpc.json` in folder config with host and external port of your act and check1 pods. You can found it in Kubernetes Dashboard in Services tab or execute in kubectl - kubectl get services
+* Fill `mq.json` in folder config with RabbitMQ exchange and routing key from script-entry-point to estore. You can find this queue in Kubernetes Dashboard in Config Maps tab - script-entry-point-app-config.
+* Fill `rabbit.json` in folder config with your RabbitMQ credentials. You can find this credentials in Kubernetes Dashboard in Config Maps tab - rabbit-mq-app-config.
 5. Run `AgressiveIOC_Traded_against_TwoOrders_partially_and_Cancelled.py`.
 
