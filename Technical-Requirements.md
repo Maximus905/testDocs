@@ -1,5 +1,4 @@
-
-Components calculations:  
+Сomponents calculations:  
 __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
 
 | Base & Core Components | Memory (MB) | CPU (millicores) | Comment |
@@ -9,7 +8,6 @@ __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
 | Rabbitmq replica 1 | 2000 MB | 1000 m | need to test |
 | Monitoring | 1500 MB | 2000 m | |
 | Other supporting components | 500 MB | 250 m | e.g. in-cluster CD system, ingress and etc |
-| __Total:__ | __7500 MB__ | __6050 m__ |  |
 
 | Custom & Building blocks components | Memory (MB) | CPU (millicores) | Comment |
 |-----|------|---------|-------------|
@@ -20,7 +18,7 @@ __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
 | th2 recon | 200 MB * n | 200 m * n | cacheSize = (podMemoryLimit - 70MB) / (AvrRawMsgSize * 10 * (SUM(number of group in rule))) |
 | th2 check2 | 800 MB * n  | 200 m * n |  |
 | th2 hand | 300 MB * n | 400 m * n |  |
-| __Total:__ | __1900 * n__ | 1400 * n |  |
+
 ## Apache Cassandra cluster hardware requirements
    Though it is possible to use Cassandra single-node installation, generally it’s recommended to setup at least 3-nodes cluster. Requirements to each node are the same.
    
@@ -68,6 +66,7 @@ installed with the following parameters in /etc/docker/daemon.json
 * __JAVA 11__	
 
 ## Hardware requirements:
+### Single-control plane cluster
 
 ### High availability configuration cluster
 
@@ -80,12 +79,10 @@ installed with the following parameters in /etc/docker/daemon.json
     * Fedora 25+
 
 * Full network connectivity between all machines in the cluster (public or private network is fine)
-* Unique hostname, MAC address, and product_uuid for every node. [Click here for more details](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#verify-mac-address).
-* Certain ports are open on your machines. [Click here for more details](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#check-required-ports).
+* Unique hostname, MAC address, and product_uuid for every node. Click here for more details.
+* Certain ports are open on your machines. Click here for more details.
 * Swap disabled. You MUST disable swap in order for the kubelet to work properly.
 * Full network connectivity between all machines in the cluster (public or private network)
 * sudo privileges on all machines
 * SSH access from one device to all nodes in the system
 * `kubeadm` and `kubelet` installed on all machines. `kubectl` is optional.
-
-[Read more](https://kubernetes.io/docs/setup/production-environment/) about installing Kubernetes cluster in production environment.
