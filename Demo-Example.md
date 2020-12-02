@@ -120,3 +120,9 @@ On the Event tab you can see the tree of all executed test cases (act events, ch
 The Message tab is the list of outcoming and incoming messages. It is linked with Events. When you choose an event with a message, this message is displayed on the list in the Message tab. Also you can navigate through the message list without reference to any event for extra analysis.
 
 Events and messages are stored in `estore` and `mstore` without time limits, so you can return to your test scenarios anytime.
+
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/images/th2architecture/demo1_gui1.gif)
+
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/images/th2architecture/demo1_gui2.gif)
+
+![](https://raw.githubusercontent.com/th2-net/th2-documentation/master/images/th2architecture/demo1_gui3.gif)
