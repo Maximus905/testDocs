@@ -1,4 +1,28 @@
-Сomponents calculations:  
+# Operator Box
+## Software requirements:
+* __kubectl__ (Kubernetes command-line tool)
+* __Helm 3+__ utility for th2 components deployment into kubernetes
+* __Chrome 75__ or newer 
+
+# QA Box
+* __Chrome 75__ or newer 
+
+#Cassandra Box
+* __Cassandra 3.11.6__<br>
+    Cassandra in-cluster installed in kubernetes (developer mode)<br>
+    Cassandra cluster installed separately (production mode)<br>
+## Apache Cassandra cluster hardware requirements
+   Though it is possible to use Cassandra single-node installation, generally it’s recommended to setup at least 3-nodes cluster. Requirements to each node are the same.
+   
+ | Apache Cassandra node | Memory (MB) | CPU (Сores) | Disk space (GB) |
+ |-----|------|---------|-------------|  
+ | Cassandra node_n | 4000 MB | 2 | 15 GB for “/ “ mount + 200 GB for “/var“ mount |
+ 
+#External Resources
+* __Git repositories__ for apps and infrastructure code
+
+# Test Platform Box
+Components calculations:  
 __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
 
 | Base & Core Components | Memory (MB) | CPU (millicores) | Comment |
@@ -8,6 +32,7 @@ __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
 | Rabbitmq replica 1 | 2000 MB | 1000 m | need to test |
 | Monitoring | 1500 MB | 2000 m | |
 | Other supporting components | 500 MB | 250 m | e.g. in-cluster CD system, ingress and etc |
+| __Total:__ | __7500 MB__ | __6050 m__ |  |
 
 | Custom & Building blocks components | Memory (MB) | CPU (millicores) | Comment |
 |-----|------|---------|-------------|
@@ -18,15 +43,13 @@ __th2 env = Base + Core + Building blocks + Custom + Cassandra *__<br>
 | th2 recon | 200 MB * n | 200 m * n | cacheSize = (podMemoryLimit - 70MB) / (AvrRawMsgSize * 10 * (SUM(number of group in rule))) |
 | th2 check2 | 800 MB * n  | 200 m * n |  |
 | th2 hand | 300 MB * n | 400 m * n |  |
+| __Total:__ | __1900 * n__ | __1400 * n__ |  |
 
-## Apache Cassandra cluster hardware requirements
-   Though it is possible to use Cassandra single-node installation, generally it’s recommended to setup at least 3-nodes cluster. Requirements to each node are the same.
-   
- | Apache Cassandra node | Memory (MB) | CPU (Сores) | Disk space (GB) |
- |-----|------|---------|-------------|  
- | Cassandra node_n | 4000 MB | 2 | 15 GB for “/ “ mount + 200 GB for “/var“ mount |
-   
 ## Software requirements:
+* Kubernetes Cluster accessible from other boxes 
+
+
+# Unallocated stuff!!!
 
 [Kubernetes - before you begin](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#before-you-begin)
 
@@ -56,18 +79,10 @@ installed with the following parameters in /etc/docker/daemon.json
   ```
   kubectl taint nodes --all node-role.kubernetes.io/master-
   ```
-* __Git repositories__ for apps and infrastructure code
-* __Helm 3+__ utility for th2 components deployment into kubernetes
-* __Cassandra 3.11.6__<br>
-    Cassandra in-cluster installed in kubernetes (developer mode)<br>
-    Cassandra cluster installed separately (production mode)<br>
-* __Chrome 75__ or newer    
 * __Python__
 * __JAVA 11__	
 
 ## Hardware requirements:
-### Single-control plane cluster
-
 ### High availability configuration cluster
 
 * Three machines that meet kubeadm’s minimum requirements for the workers
