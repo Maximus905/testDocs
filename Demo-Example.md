@@ -115,4 +115,8 @@ To learn more about how to install and set up your Simulator follow the [link](h
 ## USE CASE #4: Results
 All raw messages and test events are stored in the centralized data lake and then shown in a web-based GUI, which helps to manage and analyze test data. The GUI is divided into two parts: Events and Messages.
 
-On the Event tab you can see the tree of all executed test cases(act events, check1 events, check2-recon events, conn events). Events may contain different data: information about sending messages, incoming messages, comparison tables, where you can check that expected and actual results match or don’t match.
+On the Event tab you can see the tree of all executed test cases (act events, check1 events, check2-recon events, conn events). Events may contain different data: information about sending messages, incoming messages, comparison tables, where you can check that expected and actual results match or don’t match.
+
+The Message tab is the list of outcoming and incoming messages. It is linked with Events. When you choose an event with a message, this message is displayed on the list in the Message tab. Also you can navigate through the message list without reference to any event for extra analysis.
+
+Events and messages are stored in `estore` and `mstore` without time limits, so you can return to your test scenarios anytime.
