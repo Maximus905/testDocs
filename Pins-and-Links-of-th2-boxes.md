@@ -1,3 +1,4 @@
+### Pins.
 Each box will have a number of connectors called pins. The pins are used by the box to send/receive messages or to execute gRPC commands. In the example below, the box has two pins. Each pin have a name (it is used in the links), a connection-type (MQ or gRPC) and attributes. 
 
 Attributes describe what message stream goes through this particular pin. They are specific for each box and here, for instance, two pins – in and in_raw – are defined. They describe the raw and the parsed messages that comes into the box from the environment under test. Some attributes are optional while one of them is mandatory.
@@ -53,3 +54,61 @@ Attributes:
 | encoder_in | Describes input pin for codec encoder(transform human-readable message to protocol message). |codec |
 | encoder_out | Describes output pin for codec encoder(transform human-readable message to protocol message). | codec |
 | send | Special attribute for conn pin to receive data from act or other components | conn |
+
+### Links.
+After all the pins are defined and configured, you should also specify the links between them. It can be done by uploading a special CR called Th2Link. Based on what components links are connecting, they can be separated in several files(e.g. from-codec-links.yml, from-act-alinks.yml, dictionary-links.yml.) Also all links can be described in one file, but links for dictionary should be in `dictionaries-relation section`, and all other links in `boxes-relation` section.<br></br>
+dictionary-links example: ([full](https://github.com/th2-net/th2-infra-schema-demo/blob/master/links/dictionary-links.yml))
+```yaml
+apiVersion: th2.exactpro.com/v1
+kind: Th2Link
+metadata:
+  name: dictionary-links
+spec:
+  dictionaries-relation:
+    - name: codec-fix-dictionary
+      box: codec-fix
+      dictionary:
+        name: fix50-generic
+        type: MAIN
+```
+boxes-links example: ([full](https://github.com/th2-net/th2-infra-schema-demo/blob/master/links/from-conn-links.yml))
+```yaml
+apiVersion: th2.exactpro.com/v1
+kind: Th2Link
+metadata:
+  name: from-conn-links
+spec:
+  boxes-relation:
+    router-mq:
+      - name: democonn1-codec
+        from:
+          box: demo-conn1
+          pin: in_raw
+        to:
+          box: codec-fix
+          pin: in_codec_decode
+```
+MQ links are described in the “router-mq” section. When connecting MQ links, you should keep in mind that the pins that are marked with the "publish" attribute must be specified in the "from" section, and those marked with "subscribe" (or not marked with either) must be specified in the "to" section.
+Each link has the name and the pin of the box from which this link goes, and the name and the pin of the box to which it leads.
+gRPC links are described in the section “router-grpc”. <br></br>
+grpc-link example: ([full](https://github.com/th2-net/th2-infra-schema-demo/blob/master/links/from-act-links.yml))
+```yaml
+apiVersion: th2.exactpro.com/v1
+kind: Th2Link
+metadata:
+  name: from-act-links
+spec:
+  boxes-relation:
+    router-grpc:
+      - name: act-to-check1
+        from:
+          service-class: com.exactpro.th2.check1.Check1Handler
+          strategy: filter
+          box: act-fix
+          pin: to_check1
+        to:
+          service-class: com.exactpro.th2.check1.grpc.Check1Service
+          strategy: robin
+          box: check1
+          pin: server
+```
