@@ -112,7 +112,7 @@ Simulator is a flexible instrument, which allows to simulate different systems.
 
 To learn more about how to install and set up your Simulator follow the [link](https://github.com/th2-net/th2-sim).
 
-## USE CASE #4: Verification
-All raw messages and test events are stored in the centralised data lake and then shown in a web-based GUI, which helps to manage and analyze test data. The GUI is divided into two parts: Events and Messages.
+## USE CASE #4: Results
+All raw messages and test events are stored in the centralized data lake and then shown in a web-based GUI, which helps to manage and analyze test data. The GUI is divided into two parts: Events and Messages.
 
 On the Event tab you can see the tree of all executed test cases(act events, check1 events, check2-recon events, conn events). Events may contain different data: information about sending messages, incoming messages, comparison tables, where you can check that expected and actual results match or don’t match.
